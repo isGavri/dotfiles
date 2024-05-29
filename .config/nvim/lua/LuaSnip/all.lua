@@ -1,0 +1,37 @@
+return {
+	-- Snippet for wrapping () around text
+--	s(
+--		{ trig = "(", dscr = "Wraps () around text", wordTrig = false, snippetType = "autosnippet" },
+--		fmta("(<>)", {
+--			d(1, gt),
+--		})
+--	),
+--	-- Snippet for wrapping text in []
+--	s(
+--		{ trig = "[", dscr = "Wraps [] around text", wordTrig = false, snippetType = "autosnippet" },
+--		fmta("[<>]", {
+--			d(1, gt),
+--		})
+--	),
+--	-- Snippet for wrapping text in ""
+--	s(
+--		{ trig = '"', dscr = 'Wraps "" around text', wordTrig = false, snippetType = "autosnippet" },
+--		fmta('"<>"', {
+--			d(1, gt),
+--		})
+--	),
+--	-- Snippet for wrapping text in {}
+--	s(
+--		{ trig = "{", dscr = "Wraps {} around text", wordTrig = false, snippetType = "autosnippet" },
+--		fmta("{<>}", {
+--			d(1, gt),
+--		})
+--	),
+--	-- Snippet for wrapping text in ''
+--	s(
+--		{ trig = "'", dscr = "Wraps '' around text", wordTrig = false, snippetType = "autosnippet" },
+--		fmta("'<>'", {
+--			d(1, gt),
+--		})
+--	),
+}
