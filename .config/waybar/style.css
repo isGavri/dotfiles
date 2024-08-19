@@ -1,0 +1,121 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: normal;
+    font-size: 16px;
+    min-height: 8px;
+}
+
+window#waybar {
+  background-color: rgba(27, 27, 27, 0);
+}
+
+#taskbar,
+#battery,
+#temperature,
+#clock,
+#workspaces,
+#window,
+#tray,
+#pulseaudio,
+#backlight,
+#workspaces,
+#network,
+#memory,
+#custom-left,
+#custom-right,
+#cpu {
+   color: @main-color;
+   background-color: rgba(13, 13, 13, 0);
+   margin: 4px 0px 4px 0px;
+   padding-left: 2px;
+   padding-right: 2px;
+   opacity: 1;
+   border: 0px solid #1f1e1e;
+}
+
+tooltip{
+    background: rgba(13, 13, 13, 0.8);
+    border: 1px solid #0d0d0d;
+    border-radius: 5;
+    color: @tool-color;
+  
+}
+tooltop label {
+  background: #d0d0d0;
+}
+
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 9px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: rgba(255, 255, 255, 0.6);
+    animation: gradient_f 20s ease-in infinite; 
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682); 
+}
+
+#workspaces button.active {
+    background: #979797;
+    color: #0d0d0d;
+    margin-left: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 3px;
+    animation: gradient_f 20s ease-in infinite; 
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); 
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.6);
+    color: #3C425B;
+    border: none;
+}
+
+#workspaces {
+    padding: 0px;
+}
+
+#window {
+    color: #e2cca9; 
+}
+
+
+#cpu {
+  color: rgba(255, 255, 255, 0.6);
+}
+#memory {
+  color: rgba(255, 255, 255, 0.6);
+}
+#battery {
+    color: #e2cca9;
+}
+
+#pulseaudio {
+    color: #e2cca9;
+}
+
+#backlight {
+    color: #ebdbb2;
+}
+
+#clock {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#custom-right {
+    border-radius: 0px 22px 22px 0px;
+    margin-right: 9px;
+    padding-right: 3px;
+}
+
+#custom-left {
+    border-radius: 22px 0px 0px 22px;
+    margin-left: 9px;
+    padding-left: 3px;
+}
