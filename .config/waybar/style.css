@@ -3,7 +3,7 @@
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font";
     font-weight: normal;
-    font-size: 16px;
+    font-size: 12px;
     min-height: 8px;
 }
 
@@ -105,7 +105,7 @@ tooltop label {
 }
 
 #clock {
-  color: rgba(255, 255, 255, 0.6);
+  color: #e2cca9;
 }
 
 #custom-right {

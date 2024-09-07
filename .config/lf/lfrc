@@ -11,6 +11,14 @@ cmd mkdir ${{
   mkdir $ans
 }}
 
+cmd mkmvn ${{
+    printf "Project Name: "
+    read projectName
+    printf "Group ID: "
+    read groupid
+    mvn archetype:generate -DgroupId=$groupid -DartifactId=$projectName -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+  }}
+
 cmd makepryc ${{
   mkdir -p images
   cp /home/notsy/Documents/C/Makefile Makefile
@@ -55,16 +63,16 @@ cmd restore_trash ${{
 }}
 
 # Function to change window name
-cmd on-cd &{{
-   printf "\033]0; ${PWD/#$HOME/\~}\007" > /dev/tty
-}}
+# cmd on-cd &{{
+   # printf "\033]0; ${PWD/#$HOME/\~}\007" > /dev/tty
+# }}
 
 cmd on-quit &{{
     printf "\e]7;\e\\" > /dev/tty
 }}
 
 # Run change window name function at startup
-on-cd
+# on-cd
 
 # cd after quiting
 cmd quit-and-cd &{{
@@ -87,6 +95,7 @@ map au unarchive
 map ae $wine "$f"
 
 # Basic Functions
+map mkv mkmvn
 map . set hidden!
 map dd trash
 map dr restore_trash

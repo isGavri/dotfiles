@@ -1,5 +1,5 @@
 # ArchLinux dotfiles
-----
+
 ## After minimal instalation
 
 ### Main packages
@@ -18,13 +18,14 @@
 * hyprshot
 * waybar
 * waypaper(aur)
+* hypridle
+* wlogout
 #### Terminal
 * kitty
-* lf
+* yazi
 #### Editors
 * neovim
 * nano
-* vs-code
 * zathura
 * zathura-pdf-mupdf
 * obsidian
@@ -48,6 +49,8 @@ Starts on call
 * pipewire
 * wireplumber
 * pavucontrol
+* pamixer
+* jq
 #### Extras
 * unzip
 * xdg-desktop-portal-hyprland
@@ -58,4 +61,20 @@ Starts on call
 * ripgrep
 * fd
 * polkit-kde-agent
+* brightnessctl
+#### Programming
+* luarocks
+* wget
+* rustup (official page)
+* composer
+* php
+* npm
+* nodejs
+* openjdk
+* julia
+* ruby
+* tree-sitter
+* perl
+* biber
+* xdotool
 TODO: missing needed packages

@@ -11,29 +11,26 @@
     "hyprland/window",
     "custom/right",
     "custom/left",
-    "hyprland/workspaces",
+    "wlr/taskbar",
     "custom/right"
   ],
   "modules-center": [
     "custom/left",
-    "wlr/taskbar",
+    "clock",
     "custom/right"
   ],
   "modules-right": [
-    "custom/left",
-    "pulseaudio",
-    "battery",
-    "custom/right",
     "custom/left",
     "memory",
     "cpu",
     "custom/right",
     "custom/left",
-    "tray",
+    "pulseaudio",
+    "battery",
     "custom/right",
     "custom/left",
-    "clock",
-    "custom/right"
+    "tray",
+    "custom/right",
   ],
   "network": {
     "tooltip": true,
@@ -59,8 +56,8 @@
     "rewrite": {
       "kitty(.*)": "notsy ",
       "(.*) - nvim": "Neovim ",
-      "(.*) — Mozilla Firefox": "$1 󰈹",
-      "(.*) - YouTube — Mozilla Firefox": "$1 󰗃",
+      "(.*) — Mozilla Firefox": "Firefox 󰈹",
+      "(.*) - YouTube — Mozilla Firefox": "YouTube 󰗃",
       "(.*)Mozilla Firefox": "Firefox 󰈹",
       "(.*) - Visual Studio Code": "$1 󰨞",
       "(.*)Visual Studio Code": "Code 󰨞",
@@ -69,7 +66,7 @@
       "(.*)Spotify": "Spotify 󰓇",
       "(.*)Steam": "Steam 󰓓"
     },
-    "on-click": "rofi -show drun -theme ~/.config/rofi/menu.rasi"
+    "on-click": "rofi -show drun -theme ~/.config/rofi/config.rasi "
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -78,7 +75,7 @@
   },
   "cpu": {
     "interval": 10,
-    "format": "{usage}% ",
+    "format": "{usage}%  ",
     "max-length": 10
   },
   "memory": {
@@ -137,8 +134,8 @@
     "spacing": 9
   },
   "clock": {
-    "format": " {:%H:%M}",
-    "format-alt": "{:%A, %B %d, %Y (%R)} ",
+    "format": "  {:%H:%M}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}  ",
     "tooltip-format": "{:%A, %B %d, %Y}",
     "calendar": {
       "mode": "month",

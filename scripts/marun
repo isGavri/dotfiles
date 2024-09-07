@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Helper to find if we are on the root of a project
+root="$(find . -type d -name .mvn)"
+# Helper to file name
+file="$1"
+
+# If we are not on the root directory of a project, exit the script
+if [[ ${root} != "./.mvn" ]]; then
+  echo "Not in a project root directory"
+  exit
+fi
+
+# Root dir of the project
+rootdir="$(pwd)"
+# Name of the project
+projectName="$(basename $(pwd))"
+
+# gets the specific parameters for the project
+get_package() {
+  # cd to the path before the package
+  cd src/main/java/
+  # store directory before the package
+  regex="$(pwd)"
+  # cd to the directory containing main class
+  cd -- "$(dirname "$(find . -type f -name App.java | head -1)")"
+  # store directory containing main class
+  pwdGroupId="$(pwd)"
+  # substract directory before the package
+  foo=${pwdGroupId#"$regex/"}
+  # replace / with .
+  groupID="$(echo "$foo" | tr / .)"
+
+}
+
+build_project() {
+  # cd to root project to build
+  cd ${rootdir}
+  # builds project
+  mvn package
+  # clears terminal
+  clear
+}
+
+run_project() {
+  # gets name of the classpath
+  jarname="$(find . -type f -name "*.jar")"
+  # Checks if we got a variable
+  if [[ -z "$file" ]]; then
+    # Runs without arguments
+    java -cp "${jarname}" "${groupID}.App"
+  else
+    # Runs with arguments
+    echo "${file}"
+    java -cp "${jarname}" "${groupID}.App" "${file}"
+  fi
+}
+
+#Run functions
+get_package
+build_project
+run_project
