@@ -44,7 +44,7 @@ function gtk_theme() {
   git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme .
   echo "Runing install script"
   sleep 2
-  ./install.sh -n Gruvbox -t blue -c dark
+  ./themes/install.sh -n Gruvbox -t blue -c dark
 }
 
 function config_files() {
