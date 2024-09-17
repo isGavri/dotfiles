@@ -4,7 +4,7 @@
 First reboot after installation\
 Needs, obviously, git and internet connection
 ## Usage
-*Read the script files to understand what its done.\
+*Read the script files to understand what its done.*\
 Run the installation scripts, this will install all the packages, official and aur, and symlink the configuration files. As well as little more configuration needed.
 ## Showcase
 ### Neovim
@@ -17,6 +17,8 @@ Run the installation scripts, this will install all the packages, official and a
 ![NeovimImage](./assets/wlogout.png)
 ### Yazi
 ![NeovimImage](./assets/yazi.png)
+## External resourcer
+gtk theme from [Fausto-Korpsvart](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme)
 ## Main packages
 ### Bluetooth
 * blueman

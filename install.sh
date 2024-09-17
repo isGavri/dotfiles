@@ -28,6 +28,16 @@ function yay_install() {
   "Installing aur packages"
   yay -S - <pkgsaur.txt
 }
+function gtk_theme() {
+  echo "Installing gtk-engine-murrine"
+  sudo pacman -S gtk-engine-murrine
+  echo "Clonning repo"
+  git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme
+  echo "Movin to repo"
+  cd Gruvbox-GTK-Theme
+  "Runing install script"
+  ./install.sh -n Gruvbox -t blue -c dark
+}
 
 function config_files() {
   local workdir=$(cwd)
@@ -38,6 +48,8 @@ function config_files() {
   cp -rsf /home/notsy/Desktop/dotfiles/home/. ~
   "Symlink of wallpapers"
   cp -rsf /home/notsy/Desktop/dotfiles/Wallpaperss/. ~/Pictures/Wallpaperss/
+  cd /home/notsy/Desktop/
+  gtk_theme
   cd $workdir
 
 }
