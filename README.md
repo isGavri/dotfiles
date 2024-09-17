@@ -1,6 +1,11 @@
 # ArchLinux dotfiles
 
-## After minimal instalation
+## After minimal installation
+First reboot after installation
+Needs, obviously, git and internet connection
+## Usage
+*Read the script files to understand what its done*
+Run the installation scripts, this will install all the packages, official and aur, and symlink the configuration files. As well as little more configuration needed.
 
 ### Main packages
 #### Bluetooth
@@ -49,6 +54,7 @@ Starts on call
 * pipewire
 * wireplumber
 * pavucontrol
+* pwvucontrol
 * pamixer
 * jq
 #### Extras
@@ -62,6 +68,7 @@ Starts on call
 * fd
 * polkit-kde-agent
 * brightnessctl
+* curl
 #### Programming
 * luarocks
 * wget
@@ -77,4 +84,5 @@ Starts on call
 * perl
 * biber
 * xdotool
+* zoxide
 TODO: missing needed packages

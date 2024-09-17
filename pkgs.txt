@@ -1,3 +1,4 @@
+base-devel
 blueman
 bluez
 bluez-utils
@@ -6,10 +7,9 @@ lazygit
 openssh
 hyprland
 hyprpaper
-hyprshot
-waybar
 hypridle
-wlogout
+hyprlock
+waybar
 kitty
 yazi
 neovim
@@ -17,13 +17,13 @@ nano
 zathura
 zathura-pdf-mupdf
 obsidian
-NetworkManger
-Bletooth
+networkmangaer
 dunst
 nerd-fonts
 firefox
 thunar
 pipewire
+pipewire-audio
 wireplumber
 pavucontrol
 pamixer
@@ -31,7 +31,6 @@ jq
 unzip
 xdg-desktop-portal-hyprland
 xdg-user-dirs
-yay
 texlive
 trash-cli
 ripgrep
@@ -44,9 +43,11 @@ composer
 php
 npm
 nodejs
-openjdk
+jdk-openjdk
 julia
 ruby
 tree-sitter
 perl
 biber
+curl
+zoxide

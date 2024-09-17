@@ -1,3 +1,6 @@
 hyprpicker
 waypaper
+pwvucontrol
 rofi-wayland
+hyprshot
+wlogout
