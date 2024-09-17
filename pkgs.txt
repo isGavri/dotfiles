@@ -17,7 +17,7 @@ nano
 zathura
 zathura-pdf-mupdf
 obsidian
-networkmangaer
+networkmanager
 dunst
 nerd-fonts
 firefox
