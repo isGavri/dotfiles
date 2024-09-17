@@ -31,11 +31,8 @@ function yay_install() {
 
 function config_files() {
   local workdir=$(cwd)
-  "Going into home/notsy/Desktop/"
-  cd /home/notsy/Desktop/
-  "Clonning dotfiles repo"
-  git clone
   "Moving into dotfiles directory"
+  cd /home/notsy/Desktop/
   cd dotfiles
   "Creating symlinks of configuration files"
   cp -rsf /home/notsy/Desktop/dotfiles/home/. ~
