@@ -13,15 +13,15 @@ function pkgs_install() {
 
 function set_yay() {
 
-  "Going into home/notsy/Desktop"
+  echo "Going into home/notsy/Desktop"
   sleep 2
-  local workdir=$(cwd)
+  local workdir=$(pwd)
   cd /home/notsy/Desktop/
-  "Clonning yay.git"
+  echo "Clonning yay.git"
   sleep 2
   git clone https://aur.archlinux.org/yay.git
   cd yay
-  "Building package"
+  echo "Building package"
   sleep 2
   makepkg -si
   cd $workdir
@@ -29,7 +29,7 @@ function set_yay() {
 }
 
 function yay_install() {
-  "Installing aur packages"
+  echo "Installing aur packages"
   sleep 2
   yay -S - <pkgsaur.txt
 }
@@ -50,14 +50,14 @@ function gtk_theme() {
 
 function config_files() {
   local workdir=$(cwd)
-  "Moving into dotfiles directory"
+  echo "Moving into dotfiles directory"
   sleep 2
   cd /home/notsy/Desktop/
   cd dotfiles
-  "Creating symlinks of configuration files"
+  echo "Creating symlinks of configuration files"
   sleep 2
   cp -rsf /home/notsy/Desktop/dotfiles/home/. ~
-  "Symlink of wallpapers"
+  echo "Symlink of wallpapers"
   sleep 2
   cp -rsf /home/notsy/Desktop/dotfiles/Wallpaperss/. ~/Pictures/Wallpaperss/
   cd /home/notsy/Desktop/
