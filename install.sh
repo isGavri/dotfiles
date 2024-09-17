@@ -38,18 +38,17 @@ function gtk_theme() {
   sleep 2
   sudo pacman -S gtk-engine-murrine
   echo "Clonning repo"
+  mkdir Gruvbox
+  cd Gruvbox
   sleep 2
-  git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme
-  echo "Moving to repo"
-  sleep 2
-  cd Gruvbox-GTK-Theme
+  git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme .
   echo "Runing install script"
   sleep 2
   ./install.sh -n Gruvbox -t blue -c dark
 }
 
 function config_files() {
-  local workdir=$(cwd)
+  local workdir=$(pwd)
   echo "Moving into dotfiles directory"
   sleep 2
   cd /home/notsy/Desktop/
