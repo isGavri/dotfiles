@@ -26,3 +26,7 @@ function yy() {
   fi
   rm -f -- "$tmp"
 }
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH

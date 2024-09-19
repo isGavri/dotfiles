@@ -1,5 +1,7 @@
 function set_usr_dirs() {
   echo "Setting up user dirs"
+  echo "Installing needed package"
+  sudo pacman -S xdg-user-dirs
   sleep 2
   xdg-user-dirs-update
 }
@@ -44,7 +46,7 @@ function gtk_theme() {
   git clone https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme .
   echo "Runing install script"
   sleep 2
-  ./themes/install.sh -n Gruvbox -t blue -c dark
+  ./themes/install.sh -n Gruvbox -c dark
 }
 
 function config_files() {
@@ -55,10 +57,10 @@ function config_files() {
   cd dotfiles
   echo "Creating symlinks of configuration files"
   sleep 2
-  cp -rsf /home/notsy/Desktop/dotfiles/home/. ~
+  cp -rsf /home/notsy/dotfiles/home/. ~
   echo "Symlink of wallpapers"
   sleep 2
-  cp -rsf /home/notsy/Desktop/dotfiles/Wallpaperss/. ~/Pictures/Wallpaperss/
+  cp -rsf /home/notsy/dotfiles/Wallpaperss/. ~/Pictures/Wallpaperss/
   cd /home/notsy/Desktop/
   gtk_theme
   cd $workdir
