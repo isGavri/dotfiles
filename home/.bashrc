@@ -12,7 +12,7 @@ alias wh='dbus-run-session Hyprland'
 
 PS1='[\u@\h \W]\$ '
 
-export PATH=$PATH:/home/notsy/Desktop/dotfiles/scripts/
+export PATH=$PATH:/home/notsy/dotfiles/scripts/
 
 . "$HOME/.cargo/env"
 
@@ -28,5 +28,7 @@ function yy() {
 }
 
 # bun
+alias nvim-km='NVIM_APPNAME="nvim-kickstart-modular" nvim'
+alias nvim-k='NVIM_APPNAME="nvim-kickstart" nvim'
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH

@@ -1,14 +1,10 @@
 return {
-  -- Opens table to add configuration
+  -- ** Colorscheme ** --
+  -- base-16
   {
-    "sainnhe/gruvbox-material",
+    "RRethy/base16-nvim",
     config = function()
-      -- Sets up configuration for colorscheme
-
-      vim.g.gruvbox_material_enable_italic = true
-      vim.g.gruvbox_material_foreground = "mix"
-      vim.cmd.colorscheme("gruvbox-material")
-
+      vim.cmd("colorscheme base16-grayscale-dark")
       -- Adjust window for neo-tree
 
       require("neo-tree").setup({
@@ -27,18 +23,17 @@ return {
       })
 
       -- Set keymapping for nvim-cmp
-
       local cmp = require("cmp")
       cmp.setup({
-        -- Needs work
         mapping = {
-          ["<TAB>"] = cmp.mapping.select_next_item(),
-          ["<S-TAB>"] = cmp.mapping.select_prev_item(),
+          ["<C-j>"] = cmp.mapping.select_next_item(),
+          ["<C-k>"] = cmp.mapping.select_prev_item(),
+          ["<C-CR>"] = cmp.mapping.confirm({ select = true }),
         },
       })
     end,
   },
-  -- latex config
+  -- ** latex config ** --
   {
     "lervag/vimtex",
     lazy = false, -- we don't want to lazy load VimTeX
@@ -68,7 +63,7 @@ imap <silent><expr> <C-f> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<C-
       local i = ls.insert_node
       local fmta = require("luasnip.extras.fmt").fmta
       local utils = require("luasnip-latex-snippets.util.utils")
-      local not_math = utils.with_opts(utils.not_math, false) -- when using treesitter, change false to true
+      local not_math = utils.with_opts(utils.not_math, false)
 
       ls.add_snippets("tex", {
         s(
@@ -91,11 +86,11 @@ imap <silent><expr> <C-f> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<C-
           )
         ),
         s(
-          { trig = "[^%w]partial;", snippetType = "autosnippet", priority = 100, regTrig = true, wordTrig = false },
+          { trig = "partial;", snippetType = "autosnippet", priority = 100, regTrig = true, wordTrig = false },
           fmta("\\partial <>", { i(1) })
         ),
         s(
-          { trig = "[^%w]mbb;", snippetType = "autosnippet", priority = 100, regTrig = true, wordTrig = false },
+          { trig = "mbb;", snippetType = "autosnippet", priority = 100, regTrig = true, wordTrig = false },
           fmta("\\mathbb{<>} <>", { i(1), i(2) })
         ),
         s(
@@ -109,6 +104,88 @@ imap <silent><expr> <C-f> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<C-
             { i(1) }
           )
         ),
+        -- Matrices
+        s(
+          { trig = "bmat2", snippetType = "autosnippet", priority = 100, regTrig = true, wordTrig = false },
+          fmta(
+            [[
+            $\begin{bmatrix}
+            <> & <> \\
+            <> & <>
+            \end{bmatrix}$
+            ]],
+            {
+              i(1),
+              i(2),
+              i(3),
+              i(4),
+            }
+          )
+        ),
+        s(
+          { trig = "vmat2", snippetType = "autosnippet", priority = 100, regTrig = true, wordTrig = false },
+          fmta(
+            [[
+            $\begin{vmatrix}
+            <> & <> \\
+            <> & <>
+            \end{vmatrix}$
+            ]],
+            {
+              i(1),
+              i(2),
+              i(3),
+              i(4),
+            }
+          )
+        ),
+        s(
+          { trig = "bmat3", snippetType = "autosnippet", priority = 100, regTrig = true, wordTrig = false },
+          fmta(
+            [[
+            $\begin{bmatrix}[3]
+            <> & <> & <> \\
+            <> & <> & <> \\
+            <> & <> & <>
+            \end{bmatrix}$
+            ]],
+            {
+              i(1),
+              i(2),
+              i(3),
+              i(4),
+              i(5),
+              i(6),
+              i(7),
+              i(8),
+              i(9),
+            }
+          )
+        ),
+        s(
+          { trig = "vmat3", snippetType = "autosnippet", priority = 100, regTrig = true, wordTrig = false },
+          fmta(
+            [[
+            $\begin{vmatrix}[3]
+            <> & <> & <> \\
+            <> & <> & <> \\
+            <> & <> & <>
+            \end{vmatrix}$
+            ]],
+            {
+              i(1),
+              i(2),
+              i(3),
+              i(4),
+              i(5),
+              i(6),
+              i(7),
+              i(8),
+              i(9),
+            }
+          )
+        ),
+
         s({ trig = "lr(", snippetType = "autosnippet", priority = 100 }, fmta("\\left( <> \\right", { i(1) })),
         s({ trig = "lr[", snippetType = "autosnippet", priority = 100 }, fmta("\\left[ <> \\right", { i(1) })),
       })
