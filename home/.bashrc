@@ -16,7 +16,6 @@ export PATH=$PATH:/home/notsy/dotfiles/scripts/
 
 . "$HOME/.cargo/env"
 
-eval "$(zoxide init bash)"
 
 function yy() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -27,8 +26,3 @@ function yy() {
   rm -f -- "$tmp"
 }
 
-# bun
-alias nvim-km='NVIM_APPNAME="nvim-kickstart-modular" nvim'
-alias nvim-k='NVIM_APPNAME="nvim-kickstart" nvim'
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH

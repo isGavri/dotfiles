@@ -5,13 +5,12 @@
 
 
 window {
-  /*background-image: url("icons/image.png");*/
-  background-color: rgba(40,40,40,0.6);
+  background-image: url("/home/notsy/Pictures/Wallpaperss/lock.jpg");
 }
 
 button {
-    color: #e2cca9;
-    background-color: rgba(40, 40, 40, 0.9);
+    color: #999999;
+    background-color: rgba(42, 42, 42, 0.9);
     outline-style: none;
     border: none;
     border-width: 0px;
@@ -25,12 +24,12 @@ button {
 }
 
 button:focus {
-    background-color: rgba(90,82,76,0.7);
+    background-color: rgba(63,63,63,0.7);
     border-radius: 40px;
 }
 
 button:hover {
-    background-color: rgba(90,82,76,0.9);
+    background-color: rgba(63,63,63,0.9);
     background-size: 25%;
     border-radius: 20px;
     animation: gradient_f 20s ease-in infinite;

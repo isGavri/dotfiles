@@ -10,8 +10,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- set size of tab
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -70,6 +70,7 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.listchars = { trail = '·', nbsp = '␣' }
+vim.o.conceallevel = 3
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -184,9 +185,10 @@ local group_styles = {
   ['QuickFixLine'] = { fg = '#eeeeee', bg = '#444444', italic = false },
 }
 
-for group, style in pairs(group_styles) do
-  vim.api.nvim_set_hl(0, group, style)
-end
+-- Uncomment this line to get grayscalelike colorshceme
+-- for group, style in pairs(group_styles) do
+--   vim.api.nvim_set_hl(0, group, style)
+-- end
 
 --end of set colors
 
@@ -836,7 +838,7 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'sainnhe/gruvbox-material',
-    lazy = false,
+    lazy = true,
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
@@ -851,6 +853,16 @@ require('lazy').setup({
       -- vim.g.gruvbox_material_background = 'hard'
       -- vim.cmd.hi 'Comment gui=bold'
       -- vim.cmd.colorscheme 'gruvbox-material'
+    end,
+  },
+  {
+    'zenbones-theme/zenbones.nvim',
+    dependencies = 'rktjmp/lush.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.zenbones_darken_comments = 45
+      vim.cmd.colorscheme 'zenbones'
     end,
   },
 

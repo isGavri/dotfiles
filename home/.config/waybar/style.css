@@ -82,7 +82,7 @@ tooltop label {
 }
 
 #window {
-    color: #e2cca9; 
+    color: #999999; 
 }
 
 
@@ -93,11 +93,11 @@ tooltop label {
   color: rgba(255, 255, 255, 0.6);
 }
 #battery {
-    color: #e2cca9;
+    color: #999999;
 }
 
 #pulseaudio {
-    color: #e2cca9;
+    color: #999999;
 }
 
 #backlight {
@@ -105,7 +105,7 @@ tooltop label {
 }
 
 #clock {
-  color: #e2cca9;
+  color: #999999;
 }
 
 #custom-right {

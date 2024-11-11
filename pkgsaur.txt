@@ -4,3 +4,4 @@ pwvucontrol
 rofi-wayland
 hyprshot
 wlogout
+otf-apple-sf-mono

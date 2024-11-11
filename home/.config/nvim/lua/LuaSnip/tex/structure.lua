@@ -1,9 +1,9 @@
 local ls = require 'luasnip'
 local s = ls.snippet
-local sn = ls.snippet_node
-local t = ls.text_node
+-- local sn = ls.snippet_node
+-- local t = ls.text_node
 local i = ls.insert_node
-local f = ls.function_node
+-- local f = ls.function_node
 -- local d = ls.dynamic_node
 -- local fmt = require('luasnip.extras.fmt').fmt
 local fmta = require('luasnip.extras.fmt').fmta
@@ -13,7 +13,7 @@ local line_begin = require('luasnip.extras.expand_conditions').line_begin
 
 return {
   -- Inline math
-  s({ trig = '([%s])mk', descr = 'Inline math', regTrig = true, wordTrig = false, snippetType = 'autosnippet' }, fmta([[ \( <> \)]], { i(1) })),
+  s({ trig = 'mk', descr = 'Inline math', regTrig = true, wordTrig = false, snippetType = 'autosnippet' }, fmta([[ \( <> \)]], { i(1) })),
   -- Math block
   s(
     { trig = '([%s])dm', descr = 'Math block', regTrig = true, wordTrig = false, snippetType = 'autosnippet' },
@@ -46,8 +46,9 @@ return {
     { condition = line_begin }
   ),
   -- Document
-  s  -- TODO:
+  s(
  { trig = 'doc', descr = 'Document start' },
+  ),
   -- Top level section
   s(
     { trig = 'h1', descr = 'Top level section', regTrig = true, wordTrig = false, snippetType = 'autosnippet' },

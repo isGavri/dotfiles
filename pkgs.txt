@@ -12,14 +12,13 @@ hyprlock
 waybar
 kitty
 yazi
-neovim
 nano
 zathura
 zathura-pdf-mupdf
 obsidian
 networkmanager
 network-manager-applet
-dunst
+swaync
 nerd-fonts
 firefox
 thunar
@@ -50,7 +49,7 @@ jdk-openjdk
 julia
 ruby
 tree-sitter
+tree-sitter-cli
 perl
 biber
 curl
-zoxide
